@@ -10,6 +10,7 @@ crash.log
 
 # Local .terraform directories
 .terraform/
+.terraform.lock.hcl
 
 # Terraform variable overrides
 *.tfvars
