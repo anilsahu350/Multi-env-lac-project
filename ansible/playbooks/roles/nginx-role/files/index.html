@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anil Sahu | DevOps Journey</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: white;
+      padding: 2rem;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: white;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #8245ec;
+    }
+
+    h3 .static {
+      color: white;
+    }
+
+    .cursor {
+      display: inline-block;
+      color: #8245ec;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    p {
+      font-size: 1rem;
+      color: #c9d1d9;
+      margin-top: 1.5rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      h1, h2 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="about">
+    <h1>Hi, I am</h1>
+    <h2>Anil Sahu</h2>
+    <h3><span class="static">I am a </span><span id="typewriter"></span><span class="cursor">|</span></h3>
+
+    <p>
+      I’m a DevOps Engineer with 1+ year of hands-on experience in building and managing automation pipelines, containerized environments, and cloud-based infrastructure.
+      I’ve worked on real-world projects involving Linux, Git, GitHub, Python, Docker, Kubernetes, Jenkins, GitLab, Ansible, Terraform, Prometheus, Grafana, and AWS basics.
+      Passionate about automation and cloud technology, I’m eager to join a dynamic team where I can grow and contribute as a DevOps professional.
+    </p>
+  </section>
+
+  <script>
+    const words = ['DevOps Engineer', 'Cloud Learner'];
+    let i = 0, j = 0, current = '', isDeleting = false;
+
+    function type() {
+      const target = document.getElementById('typewriter');
+      const word = words[i];
+
+      if (isDeleting) {
+        current = word.substring(0, j--);
+      } else {
+        current = word.substring(0, j++);
+      }
+
+      target.textContent = current;
+
+      if (!isDeleting && j === word.length) {
+        isDeleting = true;
+        setTimeout(type, 2000);
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % words.length;
+        setTimeout(type, 500);
+      } else {
+        setTimeout(type, isDeleting ? 50 : 120);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', type);
+  </script>
+
+</body>
+</html>

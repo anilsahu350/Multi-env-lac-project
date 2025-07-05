@@ -21,7 +21,7 @@ crash.log
 *.key
 *.crt
 *.zip
-*-key
+devops-key
 
 # Ignore override files (used for local dev)
 override.tf
